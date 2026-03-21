@@ -6,3 +6,4 @@ The goal of the project is to explore how roguelike-style dungeon generation wor
 
 # LICENSE
 
+[MIT](LICENSE.md)
