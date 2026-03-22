@@ -1,3 +1,0 @@
-# SESSION
-
-Current stage 
