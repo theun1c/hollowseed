@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func TestNewGrid_InitializeWalls(t *testing.T) {
+func TestGrid_InitializeWalls(t *testing.T) {
 
 	w, h := 100, 100
 
@@ -21,7 +21,7 @@ func TestNewGrid_InitializeWalls(t *testing.T) {
 	}
 }
 
-func TestInBounds_IsInBounds(t *testing.T) {
+func TestGrid_InBounds(t *testing.T) {
 	w, h := 100, 100
 
 	g := NewGrid(w, h)
