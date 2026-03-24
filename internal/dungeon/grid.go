@@ -43,4 +43,3 @@ func (g Grid) InBounds(x, y int) bool {
 
 	return true
 }
-
