@@ -36,3 +36,10 @@ func NewGrid(width, height int) Grid {
 	}
 }
 
+func (g Grid) InBounds(x, y int) bool {
+	if x >= g.Width-1 || y >= g.Height-1 || x < 0 || y < 0 {
+		return false
+	}
+
+	return true
+}
