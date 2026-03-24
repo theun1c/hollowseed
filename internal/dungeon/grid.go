@@ -43,3 +43,12 @@ func (g Grid) InBounds(x, y int) bool {
 
 	return true
 }
+
+func (g Grid) Get(x, y int) (Tile, bool) {
+	return 0, false
+}
+
+func (g Grid) Set(x, y int, tile Tile) bool {
+	return false
+}
+
