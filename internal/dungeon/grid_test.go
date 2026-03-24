@@ -37,6 +37,8 @@ func TestGrid_InBounds(t *testing.T) {
 		{"out of bounds (< h)", 0, -1, false},
 		{"out of bounds (> h)", w, 0, false},
 		{"out of bounds (> w)", 0, h, false},
+		{"in bounds (x <= w-1)", w - 1, 0, true},
+		{"in bounds (y <= h-1)", 0, h - 1, true},
 	}
 
 	for _, tc := range cases {
