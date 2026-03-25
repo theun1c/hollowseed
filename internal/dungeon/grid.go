@@ -51,4 +51,3 @@ func (g Grid) Get(x, y int) (Tile, bool) {
 func (g Grid) Set(x, y int, tile Tile) bool {
 	return false
 }
-

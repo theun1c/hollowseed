@@ -52,3 +52,15 @@ func TestGrid_InBounds(t *testing.T) {
 	}
 
 }
+
+func TestGrid_Get(t *testing.T) {
+	g := NewGrid(100, 50)
+
+	// cases := []struct{
+	//
+	// }
+
+	if _, ok := g.Get(10, 10); !ok {
+		t.Fatalf("error: cannot get beyond bounds tile value")
+	}
+}
