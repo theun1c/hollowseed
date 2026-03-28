@@ -77,3 +77,30 @@ func TestGrid_Get(t *testing.T) {
 	}
 
 }
+
+func TestGrid_Set(t *testing.T) {
+	w, h := 100, 50
+
+	g := NewGrid(w, h)
+
+	cases := []struct {
+		name string
+		x, y int
+		tile Tile
+		want bool
+	}{
+		{"in boubds tile floor", w - 1, h - 1, TileFloor, true},
+		{"in boubds tile wall", w - 1, h - 1, TileWall, true},
+		{"out of boubds tile floor", w, h, TileFloor, false},
+		{"out of boubds tile wall", w, h, TileWall, false},
+	}
+
+	for _, tc := range cases {
+		t.Run(tc.name, func(t *testing.T) {
+			if ok := g.Set(tc.x, tc.y, tc.tile); ok != tc.want {
+				t.Fatalf("error: cannot set beyond bounds tile value (%d, %d, %v)", tc.x, tc.y, tc.tile)
+			}
+		})
+	}
+
+}
