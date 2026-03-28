@@ -60,3 +60,7 @@ func (g Grid) Set(x, y int, tile Tile) bool {
 
 	return false
 }
+
+func (g Grid) Render() string {
+	return ""
+}
