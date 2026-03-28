@@ -52,3 +52,62 @@ func TestGrid_InBounds(t *testing.T) {
 	}
 
 }
+
+func TestGrid_Get(t *testing.T) {
+
+	w, h := 100, 50
+
+	g := NewGrid(w, h)
+
+	cases := []struct {
+		name string
+		x, y int
+		want bool
+	}{
+		{"in bounds", w - 1, h - 1, true},
+		{"out of bounds", w, h, false},
+	}
+
+	for _, tc := range cases {
+		t.Run(tc.name, func(t *testing.T) {
+			if _, ok := g.Get(tc.x, tc.y); ok != tc.want {
+				t.Fatalf("error: cannot get beyond bounds tile value (%d, %d)", tc.x, tc.y)
+			}
+		})
+	}
+
+}
+
+func TestGrid_Set(t *testing.T) {
+	w, h := 100, 50
+
+	g := NewGrid(w, h)
+
+	cases := []struct {
+		name string
+		x, y int
+		tile Tile
+		want bool
+	}{
+		{"in bounds tile floor", w - 1, h - 1, TileFloor, true},
+		{"in bounds tile wall", w - 1, h - 1, TileWall, true},
+		{"out of bounds tile floor", w, h, TileFloor, false},
+		{"out of bounds tile wall", w, h, TileWall, false},
+	}
+
+	for _, tc := range cases {
+		t.Run(tc.name, func(t *testing.T) {
+			if ok := g.Set(tc.x, tc.y, tc.tile); ok != tc.want {
+				t.Fatalf("error: cannot set beyond bounds tile value (%d, %d, %v)", tc.x, tc.y, tc.tile)
+			} else {
+				tile, ok := g.Get(tc.x, tc.y)
+				if tc.want {
+					if tile != tc.tile || !ok {
+						t.Fatalf("error: cannot get and set beyond bounds tile value (%d, %d, %v)", tc.x, tc.y, tc.tile)
+					}
+				}
+			}
+		})
+	}
+
+}
