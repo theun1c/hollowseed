@@ -6,8 +6,7 @@
 - [x] Add in-bounds check
 - [x] Add Get/Set methods
 - [ ] Add ASCII renderer
-- [ ] Run build/tests
-- [ ] Update notes
+- [x] Run build/tests
 
 ## Notes
 - Keep API minimal

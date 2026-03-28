@@ -109,5 +109,16 @@ func TestGrid_Set(t *testing.T) {
 			}
 		})
 	}
+}
 
+func TestGrid_Render(t *testing.T) {
+	w, h := 5, 4
+
+	g := NewGrid(w, h)
+
+	want := "#####\n#####\n#####\n#####\n"
+
+	if g.Render() != want {
+		t.Fatalf("error: error while rendering map \n(%v) \n wanted \n(%v)", g.Render(), want)
+	}
 }
