@@ -62,5 +62,13 @@ func (g Grid) Set(x, y int, tile Tile) bool {
 }
 
 func (g Grid) Render() string {
-	return ""
+	mapStr := ""
+	for i := 0; i < g.Height; i++ {
+		for j := 0; j < g.Width; j++ {
+			mapStr += "#"
+		}
+		mapStr += "\n"
+	}
+
+	return mapStr
 }
