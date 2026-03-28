@@ -7,7 +7,10 @@
 
 ## Current State
 - Project scaffold exists
-- No generation logic yet
+- Feature 001 (Grid Foundation) completed
+- Grid supports size, tile storage, bounds-safe get/set, and ASCII render
+- `cmd/hollowseed/main.go` prints a demo ASCII map to console
+- No room/corridor/BSP generation logic yet
 
 ## Architecture (current intent)
 - cmd/hollowseed/main.go as entrypoint
@@ -15,7 +18,7 @@
 - Keep package structure simple, avoid premature abstractions
 
 ## Technical Constraints
-- Go 1.x
+- Go 1.26.x
 - ASCII output first
 
 ## Domain Terms
@@ -38,3 +41,4 @@
 - TDD-first for new features: RED -> GREEN -> REFACTOR
 - Start from tests, then minimal implementation
 - Keep test scope aligned with current feature SPEC
+- Keep changes limited to the active feature scope
