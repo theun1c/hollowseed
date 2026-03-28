@@ -54,13 +54,26 @@ func TestGrid_InBounds(t *testing.T) {
 }
 
 func TestGrid_Get(t *testing.T) {
-	g := NewGrid(100, 50)
 
-	// cases := []struct{
-	//
-	// }
+	w, h := 100, 50
 
-	if _, ok := g.Get(10, 10); !ok {
-		t.Fatalf("error: cannot get beyond bounds tile value")
+	g := NewGrid(w, h)
+
+	cases := []struct {
+		name string
+		x, y int
+		want bool
+	}{
+		{"in bounds", w - 1, h - 1, true},
+		{"out of bounds", w, h, false},
 	}
+
+	for _, tc := range cases {
+		t.Run(tc.name, func(t *testing.T) {
+			if _, ok := g.Get(tc.x, tc.y); ok != tc.want {
+				t.Fatalf("error: cannot get beyond bounds tile value (%d, %d)", tc.x, tc.y)
+			}
+		})
+	}
+
 }
