@@ -45,7 +45,11 @@ func (g Grid) InBounds(x, y int) bool {
 }
 
 func (g Grid) Get(x, y int) (Tile, bool) {
-	return 0, false
+	if g.InBounds(x,y) {
+    return g.Cells[y * g.Width + x].Tile , true 
+  }
+
+  return 0, false
 }
 
 func (g Grid) Set(x, y int, tile Tile) bool {
