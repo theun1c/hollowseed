@@ -7,7 +7,6 @@
 - [x] Add Get/Set methods
 - [ ] Add ASCII renderer
 - [x] Run build/tests
-- [ ] Update notes
 
 ## Notes
 - Keep API minimal
