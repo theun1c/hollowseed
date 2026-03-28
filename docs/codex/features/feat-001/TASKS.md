@@ -6,7 +6,7 @@
 - [x] Add in-bounds check
 - [x] Add Get/Set methods
 - [ ] Add ASCII renderer
-- [ ] Run build/tests
+- [x] Run build/tests
 - [ ] Update notes
 
 ## Notes
