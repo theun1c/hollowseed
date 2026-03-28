@@ -5,7 +5,7 @@
 - [x] Add Grid struct and constructor
 - [x] Add in-bounds check
 - [x] Add Get/Set methods
-- [ ] Add ASCII renderer
+- [x] Add ASCII renderer
 - [x] Run build/tests
 
 ## Notes
