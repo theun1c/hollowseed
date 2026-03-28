@@ -19,13 +19,13 @@ Create a minimal grid model to support dungeon generation steps.
 - Seed/random generator
 
 ## Acceptance Criteria
-- [ ] Grid initializes with walls
-- [ ] Get/Set work with bounds checks
-- [ ] Render returns consistent ASCII output
-- [ ] Code compiles without unrelated changes
+- [x] Grid initializes with walls
+- [x] Get/Set work with bounds checks
+- [x] Render returns consistent ASCII output
+- [x] Code compiles without unrelated changes
 
 ## Definition of Done
-- [ ] Implementation complete
-- [ ] Basic tests added (or manual check documented)
-- [ ] TASKS.md updated
+- [x] Implementation complete
+- [x] Basic tests added (or manual check documented)
+- [x] TASKS.md updated
 
